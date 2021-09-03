@@ -1,15 +1,11 @@
 <script setup lang="ts">
 interface Props {
-  type?: string;
+  prop1: string;
+  prop2: string;
+  prop3: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: 'a',
+  prop1: 'test',
 });
-
-console.log(
-  {
-    a: 1,
-  }[props.type]
-);
 </script>

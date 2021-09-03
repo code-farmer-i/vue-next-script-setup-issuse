@@ -1,25 +1,21 @@
 import { defineComponent as _defineComponent } from 'vue'
 interface Props {
-  type?: string;
+  prop1: string;
+  prop2: string;
+  prop3: string;
 }
 
 
-export default _defineComponent({
+export default /*#__PURE__*/_defineComponent({
   props: {
-    type: { type: String, required: false, default: 'a' }
-  } as unknown as undefined,
-  setup(__props: {
-  type?: string;
-}) {
+    prop1: { type: String, required: true, default: 'test' },
+    prop2: { type: String, required: true },
+    prop3: { type: String, required: true }
+  },
+  setup(__props: any) {
 
-const props = __props
+const props = __props as { prop1: string, prop2: string;, prop3: string; }
 
-
-console.log(
-  {
-    a: 1,
-  }[props.type]
-);
 
 return () => {}
 }
